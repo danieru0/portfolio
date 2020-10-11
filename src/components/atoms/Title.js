@@ -12,7 +12,7 @@ const H1 = styled.h1`
     white-space: pre-line;
 `
 
-const Header = ({children}) => {
+const Title = ({children}) => {
     return (
         <H1>
             {children}
@@ -20,8 +20,8 @@ const Header = ({children}) => {
     );
 };
 
-Header.propTypes = {
+Title.propTypes = {
     children: PropTypes.string.isRequired
 }
 
-export default Header;
+export default Title;

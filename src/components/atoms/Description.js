@@ -9,7 +9,7 @@ const P = styled.p`
     font-size: 16px;
 `
 
-const Info = ({children, className}) => {
+const Description = ({children, className}) => {
     return (
         <P className={className}>
             {children}
@@ -17,8 +17,8 @@ const Info = ({children, className}) => {
     );
 };
 
-Info.propTypes = {
+Description.propTypes = {
     children: PropTypes.string.isRequired
 }
 
-export default Info;
+export default Description;
