@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Line = styled.span`
     width: ${({active}) => active ? '80px' : '40px'};
     height: 1px;
-    background-color: ${({active}) => active ? '#fff' : '#5C5C5C'};
+    background-color: ${({active, theme}) => active ? theme.colors.secondary : theme.colors.inactive};
     display: block;
     margin: 0px 15px;
     transition: width .2s ease-in, background-color .2s ease-in;
@@ -13,7 +13,7 @@ const Line = styled.span`
 
 const Container = styled.a`
     font-family: ${({theme}) => theme.fonts.secondary};
-    color: ${({active}) => active ? '#fff' : '#5C5C5C'};
+    color: ${({active, theme}) => active ? theme.colors.secondary : theme.colors.inactive};
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -22,22 +22,22 @@ const Container = styled.a`
     transition: color .2s ease-in;
 
     &:hover {
-        color: #fff;
+        color: ${({theme}) => theme.colors.secondary};
     }
 
     &:hover ${Line} {
         width: 80px;
-        background-color: #fff;
+        background-color: ${({theme}) => theme.colors.secondary};
     }
 
     &:focus {
         outline: none;
-        color: #fff;
+        color: ${({theme}) => theme.colors.secondary};
     }
 
     &:focus ${Line} {
         width: 80px;
-        background-color: #fff;
+        background-color: ${({theme}) => theme.colors.secondary};
     }
 `
 

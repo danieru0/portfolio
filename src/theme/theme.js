@@ -4,7 +4,8 @@ const theme = {
         secondary: '#FFFFFF',
         bgprimary: '#151515',
         bgsecondary: '#202022',
-        linkIcon: '#9FA2B5'
+        inactive: '#5C5C5C',
+        linkIcon: '#C4C9DF',
     },
     fonts: {
         primary: 'Secular One',
