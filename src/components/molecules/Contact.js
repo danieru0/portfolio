@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
     width: 100%;
@@ -24,5 +25,9 @@ const Contact = ({active}) => {
         </Container>
     );
 };
+
+Contact.propTypes = {
+    active: PropTypes.bool.isRequired
+}
 
 export default Contact;

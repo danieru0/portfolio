@@ -9,11 +9,16 @@ const Span = styled.span`
     text-transform: uppercase;
     line-height: 90%;
     user-select: none;
+    transition: color .3s transform .3s;
+
+    &:hover {
+        color: rgba(255,255,255,1);
+    }
 `
 
-const Skill = ({children, size}) => {
+const Skill = ({children, size, onMouseMove, onMouseOut}) => {
     return (
-        <Span size={size}>
+        <Span size={size} onMouseMove={onMouseMove} onMouseOut={onMouseOut}>
             {children}
         </Span>
     );

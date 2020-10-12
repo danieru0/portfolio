@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
     width: 100%;
@@ -24,5 +25,9 @@ const Projects = ({active}) => {
         </Container>
     );
 };
+
+Projects.propTypes = {
+    active: PropTypes.bool.isRequired
+}
 
 export default Projects;
