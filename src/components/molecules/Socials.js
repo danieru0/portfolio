@@ -7,17 +7,20 @@ const Container = styled.ul`
     display: flex;
     justify-content: space-between;
     list-style: none;
-    position: absolute;
-    bottom: 0;
     width: 350px;
+    margin-top: auto;
 `
 const Item = styled.li``
 
 const Socials = () => {
     return (
         <Container>
-            <Item><SocialButton text="Facebook" link="https://www.facebook.com/daniel.daniru0" iconName={['fab', 'facebook-square']} /></Item>
-            <Item><SocialButton text="Github" link="https://github.com/elosiktv" iconName={['fab', 'github']} /></Item>
+            <Item>
+                <SocialButton text="Facebook" link="https://www.facebook.com/daniel.daniru0" iconName={['fab', 'facebook-square']} />
+            </Item>
+            <Item>
+                <SocialButton text="Github" link="https://github.com/elosiktv" iconName={['fab', 'github']} />
+            </Item>
         </Container>
     );
 };

@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-import NavContext from '../../context/NavContext';
 
 import Header from '../molecules/Header';
 import Nav from '../molecules/Nav';
@@ -11,23 +9,16 @@ const Container = styled.div`
     width: 40%;
     height: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
 `
 
 const LeftSide = () => {
-    const { Provider } = NavContext;
-    const [active, setActive] = useState(0);
-
-    const updateActive = value => {
-        setActive(value);
-    }
-
     return (
         <Container>
-            <Provider value={{active: active, updateActive: updateActive}}>
-                <Header />
-                <Nav />
-                <Socials />
-            </Provider>
+            <Header />
+            <Nav />
+            <Socials />
         </Container>
     );
 };
