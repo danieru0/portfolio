@@ -14,6 +14,12 @@ const Span = styled.span`
     &:hover {
         color: rgba(255,255,255,1);
     }
+
+    @media (max-width: 1160px) {
+        font-size: 50px;
+        margin: 5px;
+        line-height: 40px;
+    }
 `
 
 const Skill = ({children, size, onMouseMove, onMouseOut}) => {

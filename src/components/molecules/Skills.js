@@ -8,23 +8,38 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-60px);
-    transition: opacity .3s, transform .3s;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition: opacity .3s, transform .3s, visibility .3s;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
-    ${({active}) => active && css`
-        opacity: 1;
-        transform: translateY(0px);
-        visibility: visible;
-    `}
+    ${({active, index, prevIndex}) => active || (
+        index > prevIndex ? (
+            css`
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(60px);
+            `
+        ) : (
+            css`
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-60px);
+            `
+        )
+    )}
+
+    @media (max-width: 1160px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+    }
 `
 
-const Skills = ({active}) => {
-
+const Skills = ({active, index, prevIndex}) => {
     const handleMove = e => {
         const rect = e.target.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -40,7 +55,7 @@ const Skills = ({active}) => {
     }
 
     return (
-        <Container active={active}>
+        <Container active={active} index={index} prevIndex={prevIndex}>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>html</Skill>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>javascript</Skill>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>css</Skill>
@@ -51,6 +66,7 @@ const Skills = ({active}) => {
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>node.js</Skill>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>firebase</Skill>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>graphql</Skill>
+            <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>socket.io</Skill>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>mongodb</Skill>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={21}>multer</Skill>
             <Skill onMouseMove={handleMove} onMouseOut={handleMoveOut} size={21}>ffmpeg</Skill>
@@ -59,7 +75,9 @@ const Skills = ({active}) => {
 };
 
 Skills.propTypes = {
-    active: PropTypes.bool.isRequired
+    active: PropTypes.bool.isRequired,
+    index: PropTypes.number.isRequired,
+    prevActive: PropTypes.number.isRequired
 }
 
 export default Skills;

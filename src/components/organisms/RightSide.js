@@ -9,18 +9,17 @@ import Contact from '../molecules/Contact';
 
 const Container = styled.div`
     width: 45%;
-    height: 100%;
     position: relative;
 `
 
 const RightSide = () => {
-    const { active } = useContext(NavContext);
+    const { active, prevActive } = useContext(NavContext);
 
     return (
         <Container>
-            <Skills active={active === 0} />
-            <Projects active={active === 1} />
-            <Contact active={active === 2} />
+            <Skills active={active === 0} index={active} prevIndex={prevActive} />
+            <Projects active={active === 1} index={active} prevIndex={prevActive} />
+            <Contact active={active === 2} index={active} prevIndex={prevActive} />
         </Container>
     );
 };

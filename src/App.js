@@ -16,18 +16,30 @@ library.add(faFacebookSquare, faGithub, faExternalLinkAlt);
 
 const Container = styled.div`
 	width: 100%;
-    height: 100vh;
+	background: ${({theme}) => theme.colors.bgprimary};
+`
+
+const Content = styled.div`
+	max-width: 1920px;
+	margin: auto;
+    min-height: 100vh;
     display: flex;
 	justify-content: space-between;
-    background: ${({theme}) => theme.colors.bgprimary};
+	align-items: stretch;
     padding: 100px 150px;
+
+	@media (max-width: 1610px) {
+        padding: 100px 50px;
+    }
 `
 
 function App() {
 	const { Provider } = NavContext;
 	const [active, setActive] = useState(0);
+	const [prevActive, setPrevActive] = useState(0);
 
 	const updateActive = value => {
+		setPrevActive(active);
         setActive(value);
     }
 
@@ -35,10 +47,12 @@ function App() {
 		<>
 			<GlobalStyle />
 			<ThemeProvider theme={theme}>
-				<Provider value={{active: active, updateActive: updateActive}}>
+				<Provider value={{active: active, prevActive: prevActive, updateActive: updateActive}}>
 					<Container>
-						<LeftSide />
-						<RightSide />
+						<Content>
+							<LeftSide />
+							<RightSide />
+						</Content>
 					</Container>
 				</Provider>
 			</ThemeProvider>

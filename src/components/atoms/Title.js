@@ -10,6 +10,11 @@ const H1 = styled.h1`
     line-height: 80px;
     user-select: none;
     white-space: pre-line;
+
+    @media (max-width: 1410px) {
+        font-size: 50px;
+        line-height: 50px;
+    }
 `
 
 const Title = ({children}) => {

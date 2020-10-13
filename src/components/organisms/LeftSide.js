@@ -7,10 +7,17 @@ import Socials from '../molecules/Socials';
 
 const Container = styled.div`
     width: 40%;
-    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1822px) {
+        width: 709px;
+    }
+
+    @media (max-width: 1410px) {
+        width: 50%;
+    }
 `
 
 const LeftSide = () => {

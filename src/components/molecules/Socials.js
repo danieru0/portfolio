@@ -9,6 +9,10 @@ const Container = styled.ul`
     list-style: none;
     width: 350px;
     margin-top: auto;
+
+    @media (max-height: 900px) {
+        margin-top: 25px;
+    }
 `
 const Item = styled.li``
 

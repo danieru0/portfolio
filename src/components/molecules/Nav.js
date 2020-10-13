@@ -9,6 +9,10 @@ import NavButton from '../atoms/NavButton';
 
 const Container = styled.nav`
     margin-top: 60px;
+
+    @media (max-height: 840px) {
+        margin-top: 30px;
+    }
 `
 
 const List = styled.ul`
