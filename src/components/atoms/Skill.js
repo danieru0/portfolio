@@ -15,10 +15,10 @@ const Span = styled.span`
         color: rgba(255,255,255,1);
     }
 
-    @media (max-width: 1160px) {
-        font-size: 50px;
+    @media (max-width: 1426px) {
+        font-size: 40px;
         margin: 5px;
-        line-height: 40px;
+        line-height: 30px;
     }
 `
 

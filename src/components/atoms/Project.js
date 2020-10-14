@@ -11,6 +11,7 @@ const Container = styled.a`
     user-select: none;
     color: ${({theme}) => theme.colors.secondary};
     text-decoration: none;
+    overflow: hidden;
 `
 
 const Details = styled.div`
@@ -18,12 +19,20 @@ const Details = styled.div`
     display: flex;
     flex-direction: column;
     padding: 15px 30px;
+
+    @media (max-width: 1410px) {
+        width: 100%;
+    }
 `
 
 const Image = styled.div`
     width: 45%;
     background-image: ${({img}) => `url(${img})`};
     background-size: cover;
+
+    @media (max-width: 1410px) {
+        display: none;
+    }
 `
 
 const Wrapper = styled.div`

@@ -16,6 +16,11 @@ const Container = styled.div`
     flex-direction: column;
     align-items: flex-start;
 
+    @media (max-width: 1426px) {
+        justify-content: center;
+        align-content: center;
+    }
+
     ${({active, index, prevIndex}) => active || (
         index > prevIndex ? (
             css`
@@ -31,12 +36,6 @@ const Container = styled.div`
             `
         )
     )}
-
-    @media (max-width: 1160px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-    }
 `
 
 const Skills = ({active, index, prevIndex}) => {
