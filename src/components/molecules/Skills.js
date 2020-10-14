@@ -77,7 +77,7 @@ const Skills = ({active, index, prevIndex}) => {
 Skills.propTypes = {
     active: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
-    prevActive: PropTypes.number.isRequired
+    prevIndex: PropTypes.number.isRequired
 }
 
 export default Skills;

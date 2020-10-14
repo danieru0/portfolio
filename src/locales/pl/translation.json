@@ -10,5 +10,13 @@
         "korean-practice": "Pomoc w nauce języka koreańskiego, autoryzacja, własne konto, zapisywanie słówek, testy.",
         "notes": "Tworzenie notatek, tagi, ulubione, konto użytkownika, edytor, kosz.",
         "chat-v2": "Autoryzacja, konta użytkowników, filmy z youtube, wiele czatów, linki."
+    },
+    "contact": {
+        "name": "Imie",
+        "email": "Email",
+        "message": "Wiadomość",
+        "submit": "Wyślij",
+        "required": "Wymagane",
+        "email.error": "Email jest niepoprawny!"
     }
 }

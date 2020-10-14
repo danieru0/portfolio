@@ -4,6 +4,7 @@ const theme = {
         secondary: '#FFFFFF',
         bgprimary: '#151515',
         bgsecondary: '#202022',
+        bgsecondaryhover: '#313133',
         inactive: '#5C5C5C',
         linkIcon: '#C4C9DF',
     },

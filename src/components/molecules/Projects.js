@@ -82,7 +82,7 @@ const Projects = ({active, index, prevIndex}) => {
 Projects.propTypes = {
     active: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
-    prevActive: PropTypes.number.isRequired
+    prevIndex: PropTypes.number.isRequired
 }
 
 export default Projects;

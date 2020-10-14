@@ -35,8 +35,8 @@ const Content = styled.div`
 
 function App() {
 	const { Provider } = NavContext;
-	const [active, setActive] = useState(0);
-	const [prevActive, setPrevActive] = useState(0);
+	const [active, setActive] = useState(2);
+	const [prevActive, setPrevActive] = useState(1);
 
 	const updateActive = value => {
 		setPrevActive(active);
