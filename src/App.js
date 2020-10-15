@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme/theme';
 import GlobalStyle from './theme/globalStyles';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookSquare, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faLanguage, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
-import NavContext from './context/NavContext';
+import mainContext, { initalState } from './context/mainContext';
+import mainReducer from './reducer/mainReducer';
 
 import LeftSide from './components/organisms/LeftSide';
 import RightSide from './components/organisms/RightSide';
 
-library.add(faFacebookSquare, faGithub, faExternalLinkAlt);
+library.add(faFacebookSquare, faGithub, faExternalLinkAlt, faLanguage, faGlobe);
 
 const Container = styled.div`
 	width: 100%;
@@ -34,20 +35,14 @@ const Content = styled.div`
 `
 
 function App() {
-	const { Provider } = NavContext;
-	const [active, setActive] = useState(0);
-	const [prevActive, setPrevActive] = useState(0);
-
-	const updateActive = value => {
-		setPrevActive(active);
-        setActive(value);
-    }
+	const { Provider } = mainContext;
+	const [state, dispatch] = useReducer(mainReducer, initalState);
 
 	return (
 		<>
 			<GlobalStyle />
 			<ThemeProvider theme={theme}>
-				<Provider value={{active: active, prevActive: prevActive, updateActive: updateActive}}>
+				<Provider value={{state, dispatch}}>
 					<Container>
 						<Content>
 							<LeftSide />

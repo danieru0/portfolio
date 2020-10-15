@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import NavContext from '../../context/NavContext';
+import mainContext from '../../context/mainContext';
 
 import Skills from '../molecules/Skills';
 import Projects from '../molecules/Projects';
@@ -13,13 +13,13 @@ const Container = styled.div`
 `
 
 const RightSide = () => {
-    const { active, prevActive } = useContext(NavContext);
+    const { state } = useContext(mainContext);
 
     return (
         <Container>
-            <Skills active={active === 0} index={active} prevIndex={prevActive} />
-            <Projects active={active === 1} index={active} prevIndex={prevActive} />
-            <Contact active={active === 2} index={active} prevIndex={prevActive} />
+            <Skills active={state.active === 0} index={state.active} prevIndex={state.prevActive} />
+            <Projects active={state.active === 1} index={state.active} prevIndex={state.prevActive} />
+            <Contact active={state.active === 2} index={state.active} prevIndex={state.prevActive} />
         </Container>
     );
 };

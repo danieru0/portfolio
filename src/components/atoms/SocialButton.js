@@ -10,6 +10,7 @@ const Container = styled.a`
     text-decoration: none;
     align-items: center;
     user-select: none;
+    font-size: 16px;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
