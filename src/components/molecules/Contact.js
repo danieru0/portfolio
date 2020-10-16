@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Formik, Form } from 'formik';
@@ -6,10 +6,15 @@ import * as Yup from 'yup';
 import * as emailjs from 'emailjs-com';
 
 import t from '../../helpers/t';
+import useHover from '../../hooks/useHover';
+import withHover from '../../hoc/withHover';
 
 import Input from '../atoms/Input';
 import TextArea from '../atoms/TextArea';
 import Button from '../atoms/Button';
+
+const ButtonWithHover = withHover(Button);
+const InputWithHover = withHover(Input);
 
 emailjs.init('user_1DsEz9qOuFoZmSe2wAUp0');
 
@@ -63,6 +68,28 @@ const Wrapper = styled.div`
 `
 
 const Contact = ({active, index, prevIndex}) => {
+    const [style, setStyle] = useState(null);
+    const { handleMouseEnter, handleMouseLeave } = useHover(style);
+    
+    useEffect(() => {
+        if (style) {
+            handleMouseEnter(style);
+        }
+    }, [style]); //eslint-disable-line
+
+    const handleEnter = type => {
+        if (type !== 'button') {
+            setStyle(`transform: scale(0.5) translate(-50%, -50%);`);
+        } else {
+            setStyle(`transform: scale(1.5) translate(-50%, -50%);`);
+        }
+    }
+
+    const handleLeave = () => {
+        setStyle(null);
+        handleMouseLeave();
+    }
+
     return (
         <Container active={active} index={index} prevIndex={prevIndex}>
             <Formik
@@ -79,11 +106,11 @@ const Contact = ({active, index, prevIndex}) => {
                 {({values, errors, handleChange}) => (
                     <StyledForm>
                         <Wrapper>    
-                            <Input error={errors.name} onChange={handleChange} value={values.name} name="name" placeholder={t("contact")["name"]} />
-                            <Input error={errors.email} onChange={handleChange} value={values.email} name="email" placeholder={t("contact")["email"]} />
+                            <InputWithHover onMouseEnter={() => handleEnter('input')} onMouseLeave={handleLeave} error={errors.name} onChange={handleChange} value={values.name} name="name" placeholder={t("contact")["name"]} />
+                            <InputWithHover onMouseEnter={() => handleEnter('input')} onMouseLeave={handleLeave} error={errors.email} onChange={handleChange} value={values.email} name="email" placeholder={t("contact")["email"]} />
                         </Wrapper>
-                        <TextArea error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact")["message"]} />
-                        <Button type="submit">{t("contact")["submit"]}</Button>
+                        <TextArea onMouseEnter={() => handleEnter('textarea')} error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact")["message"]} />
+                        <ButtonWithHover onMouseEnter={() => handleEnter('button')} onMouseLeave={handleLeave} type="submit">{t("contact")["submit"]}</ButtonWithHover>
                     </StyledForm>
                 )}
             </Formik>

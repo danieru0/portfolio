@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import i18n from 'i18next';
 
 import t from '../../helpers/t';
-
+import withHover from '../../hoc/withHover';
+import useHover from '../../hooks/useHover';
 import mainContext from '../../context/mainContext';;
 
 const Container = styled.ul`
@@ -26,7 +27,7 @@ const Button = styled.button`
     height: 100%;
     background: transparent;
     border: none;
-    cursor: pointer;
+    cursor: none;
     color: ${({theme}) => theme.colors.secondary};
     font-family: ${({theme}) => theme.fonts.secondary};
     outline: none;
@@ -37,8 +38,11 @@ const Button = styled.button`
     }
 `
 
+const ButtonWithHover = withHover(Button);
+
 const LanguageDropDown = () => {
     const { state, dispatch } = useContext(mainContext);
+    const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(1.5) translate(-50%, -50%);`);
 
     useEffect(() => {
         const handleOutsideClick = e => {
@@ -52,8 +56,10 @@ const LanguageDropDown = () => {
 
         return () => {
             document.removeEventListener('click', handleOutsideClick);
+
+            handleMouseLeave();
         }
-    }, [dispatch])
+    }, [dispatch]) //eslint-disable-line
 
     const handleLangChange = lang => {
         i18n.changeLanguage(lang);
@@ -66,13 +72,13 @@ const LanguageDropDown = () => {
     return (
         <Container bottom={state.dropdownMenuBottom}>
             <Item>
-                <Button onClick={() => handleLangChange('pl')}>{t('languages')['polish']}</Button>
+                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('pl')}>{t('languages')['polish']}</ButtonWithHover>
             </Item>
             <Item>
-                <Button onClick={() => handleLangChange('en')}>{t('languages')['english']}</Button>
+                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('en')}>{t('languages')['english']}</ButtonWithHover>
             </Item>
             <Item>
-                <Button onClick={() => handleLangChange('jp')}>{t('languages')['japanese']}</Button>
+                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('jp')}>{t('languages')['japanese']}</ButtonWithHover>
             </Item>
         </Container>
     );

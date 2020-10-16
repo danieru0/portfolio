@@ -11,6 +11,7 @@ const Container = styled.a`
     align-items: center;
     user-select: none;
     font-size: 16px;
+    cursor: none;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -27,9 +28,9 @@ const Text = styled.span`
     margin: 0px 10px 0px 20px;
 `
 
-const SocialButton = ({text, link, iconName}) => {
+const SocialButton = ({text, link, iconName, ...props}) => {
     return (
-        <Container href={link}>
+        <Container {...props} href={link}>
             <StyledIcon icon={iconName} />
             <Text>{text}</Text>
             <StyledIcon icon="external-link-alt" />

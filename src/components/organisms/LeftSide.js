@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import styled from 'styled-components';
 
 import mainContext from '../../context/mainContext';
@@ -26,14 +26,17 @@ const Container = styled.div`
 const LeftSide = () => {
     const { state } = useContext(mainContext);
 
-    return (
-        <Container>
-            {state.dropdownMenu && <LanguageDropdown />}
-            <Header />
-            <Nav />
-            <Socials />
-        </Container>
-    );
+    return useMemo(() => {
+        return (
+            <Container>
+                {state.dropdownMenu && <LanguageDropdown />}
+                <Header />
+                <Nav />
+                <Socials />
+            </Container>
+        );
+    }, [state])
+
 };
 
 export default LeftSide;

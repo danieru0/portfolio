@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import t from '../../helpers/t';
 
@@ -20,6 +21,7 @@ const StyledTextArea = styled.textarea`
     outline: none;
     resize: none;
     font-size: 20px;
+    cursor: none;
     padding: 0px 10px;
     position: relative;
 
@@ -51,14 +53,22 @@ const ErrorMessage = styled.span`
     font-size: 12px;
 `
 
-const TextArea = ({placeholder, name, value, onChange, error}) => {
+const TextArea = ({placeholder, name, value, onChange, error, ...props}) => {
     return (
         <Container>
-            <StyledTextArea onChange={onChange} value={value} name={name} required/>
+            <StyledTextArea {...props} onChange={onChange} value={value} name={name} required/>
             <StyledLabel htmlfor={name}>{placeholder}</StyledLabel>
             <ErrorMessage>{t("contact")[error]}</ErrorMessage>
         </Container>
     );
 };
+
+TextArea.propTypes = {
+    placeholder: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    error: PropTypes.string
+}
 
 export default TextArea;

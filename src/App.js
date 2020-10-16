@@ -10,15 +10,19 @@ import i18n from 'i18next';
 
 import mainContext, { initalState } from './context/mainContext';
 import mainReducer from './reducer/mainReducer';
+import cursorContext, { initalCursorState } from './context/cursorContext';
+import cursorReducer from './reducer/cursorReducer';
 
 import LeftSide from './components/organisms/LeftSide';
 import RightSide from './components/organisms/RightSide';
+import Cursor from './components/molecules/Cursor';
 
 library.add(faFacebookSquare, faGithub, faExternalLinkAlt, faLanguage, faGlobe);
 
 const Container = styled.div`
 	width: 100%;
 	background: ${({theme}) => theme.colors.bgprimary};
+	cursor: none;
 `
 
 const Content = styled.div`
@@ -36,13 +40,20 @@ const Content = styled.div`
 `
 
 function App() {
-	const { Provider } = mainContext;
 	const [state, dispatch] = useReducer(mainReducer, initalState);
+	const [cursorState, dispatchCursor] = useReducer(cursorReducer, initalCursorState);
 
 	useEffect(() => {
+		const cursor = document.querySelector('.cursor');
+
 		dispatch({
 			type: 'UPDATE_LANG',
 			payload: i18n.language.toUpperCase()
+		})
+
+		document.addEventListener('mousemove', e => {
+			cursor.style.left = `${e.pageX}px`;
+			cursor.style.top = `${e.pageY}px`;
 		})
 	}, [])
 
@@ -50,14 +61,17 @@ function App() {
 		<>
 			<GlobalStyle />
 			<ThemeProvider theme={theme}>
-				<Provider value={{state, dispatch}}>
-					<Container>
-						<Content>
-							<LeftSide />
-							<RightSide />
-						</Content>
-					</Container>
-				</Provider>
+				<mainContext.Provider value={{state, dispatch}}>
+					<cursorContext.Provider value={{cursorState, dispatchCursor}}>
+						<Container>
+							<Cursor />
+							<Content>
+								<LeftSide />
+								<RightSide />
+							</Content>
+						</Container>
+					</cursorContext.Provider>
+				</mainContext.Provider>
 			</ThemeProvider>
 
 		</>

@@ -7,7 +7,7 @@ const Container = styled.a`
     height: 100%;
     background-color: ${({theme}) => theme.colors.bgsecondary};
     display: flex;
-    cursor: pointer;
+    cursor: none;
     user-select: none;
     color: ${({theme}) => theme.colors.secondary};
     text-decoration: none;

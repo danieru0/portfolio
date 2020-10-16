@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types';
 
-const Container = styled.a`
+const Container = styled.button`
     display: flex;
     color: ${({theme}) => theme.colors.secondary};
     font-family: ${({theme}) => theme.fonts.secondary};
@@ -11,7 +11,7 @@ const Container = styled.a`
     background: none;
     border: none;
     font-size: 16px;
-    cursor: pointer;
+    cursor: none;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -23,9 +23,9 @@ const Text = styled.span`
     margin-left: 10px;
 `
 
-const LanguageButton = ({text, onClick}) => {
+const LanguageButton = ({text, onClick, ...props}) => {
     return (
-        <Container onClick={onClick}>
+        <Container {...props} onClick={onClick}>
             <StyledIcon icon="globe" />
             <Text>{text}</Text>
         </Container>

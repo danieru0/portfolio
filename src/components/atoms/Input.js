@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import t from '../../helpers/t';
 
@@ -19,6 +20,7 @@ const StyledInput = styled.input`
     outline: none;
     font-size: 20px;
     padding: 0px 10px;
+    cursor: none;
     position: relative;
 
     &:valid + label,
@@ -49,14 +51,22 @@ const ErrorMessage = styled.span`
     font-size: 12px;
 `
 
-const Input = ({placeholder, name, value, onChange, error}) => {
+const Input = ({placeholder, name, value, onChange, error, ...props}) => {
     return (
         <Container>
-            <StyledInput onChange={onChange} value={value} name={name} required/>
+            <StyledInput {...props} onChange={onChange} value={value} name={name} required/>
             <StyledLabel htmlFor={name}>{placeholder}</StyledLabel>
             <ErrorMessage>{t("contact")[error]}</ErrorMessage>
         </Container>
     );
 };
+
+Input.propTypes = {
+    placeholder: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    error: PropTypes.string
+}
 
 export default Input;

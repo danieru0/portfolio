@@ -20,6 +20,7 @@ const Container = styled.a`
     user-select: none;
     margin: 15px 0px;
     transition: color .2s ease-in;
+    cursor: none;
 
     &:hover {
         color: ${({theme}) => theme.colors.secondary};
@@ -51,9 +52,9 @@ const Text = styled.span`
     letter-spacing: 1px;
 `
 
-const NavButton = ({number, active, text, onClick, onKeyDown}) => {
+const NavButton = ({number, active, text, onClick, onKeyDown, ...props}) => {
     return (
-        <Container onKeyDown={onKeyDown} onClick={onClick} tabIndex="0" active={active}>
+        <Container {...props} onKeyDown={onKeyDown} onClick={onClick} tabIndex="0" active={active}>
             <Number>{number}</Number>
             <Line active={active} />
             <Text>{text}</Text>

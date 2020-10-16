@@ -22,9 +22,9 @@ const Span = styled.span`
     }
 `
 
-const Skill = ({children, size, onMouseMove, onMouseOut}) => {
+const Skill = ({children, size, onMouseMove, onMouseOut, onMouseEnter, ...props}) => {
     return (
-        <Span size={size} onMouseMove={onMouseMove} onMouseOut={onMouseOut}>
+        <Span onMouseEnter={() => onMouseEnter(size)} {...props} size={size} onMouseMove={onMouseMove} onMouseOut={onMouseOut}>
             {children}
         </Span>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledButton = styled.button`
     color: ${({theme}) => theme.colors.secondary};
@@ -10,7 +11,7 @@ const StyledButton = styled.button`
     text-transform: uppercase;
     width: 100px;
     height: 40px;
-    cursor: pointer;
+    cursor: none;
     outline: none;
 
     &:focus,
@@ -19,12 +20,17 @@ const StyledButton = styled.button`
     }
 `
 
-const Button = ({children, type}) => {
+const Button = ({children, type, ...props}) => {
     return (
-        <StyledButton type={type}>
+        <StyledButton {...props} type={type}>
             {children}
         </StyledButton>
     );
 };
+
+Button.propTypes = {
+    children: PropTypes.string.isRequired,
+    type: PropTypes.string
+}
 
 export default Button;
