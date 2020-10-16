@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types';
 
-const Container = styled.button`
+const Container = styled.a`
     display: flex;
     color: ${({theme}) => theme.colors.secondary};
     font-family: ${({theme}) => theme.fonts.secondary};

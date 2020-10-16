@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
+import mainContext from '../../context/mainContext';
+
 import Header from '../molecules/Header';
+import LanguageDropdown from '../molecules/LanguageDropdown';
 import Nav from '../molecules/Nav';
 import Socials from '../molecules/Socials';
 
@@ -21,8 +24,11 @@ const Container = styled.div`
 `
 
 const LeftSide = () => {
+    const { state } = useContext(mainContext);
+
     return (
         <Container>
+            {state.dropdownMenu && <LanguageDropdown />}
             <Header />
             <Nav />
             <Socials />

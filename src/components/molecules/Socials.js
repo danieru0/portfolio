@@ -23,11 +23,17 @@ const Item = styled.li``
 const Socials = () => {
     const { state, dispatch } = useContext(mainContext);
 
-    const handleLanguageButtonClick = () => {
+    const handleLanguageButtonClick = e => {
+        const rect = e.currentTarget.getBoundingClientRect();
         dispatch({
             type: 'UPDATE_DROPDOWN_MENU',
             payload: true
         })
+        dispatch({
+            type: 'UPDATE_DROPDOWN_MENU_BOTTOM',
+            payload: rect.bottom - rect.top,
+        })
+
     }
 
     return (

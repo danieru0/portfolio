@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme/theme';
 import GlobalStyle from './theme/globalStyles';
@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookSquare, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt, faLanguage, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import i18n from 'i18next';
 
 import mainContext, { initalState } from './context/mainContext';
 import mainReducer from './reducer/mainReducer';
@@ -37,6 +38,13 @@ const Content = styled.div`
 function App() {
 	const { Provider } = mainContext;
 	const [state, dispatch] = useReducer(mainReducer, initalState);
+
+	useEffect(() => {
+		dispatch({
+			type: 'UPDATE_LANG',
+			payload: i18n.language.toUpperCase()
+		})
+	}, [])
 
 	return (
 		<>

@@ -1,4 +1,29 @@
 {
     "header": "Hello, I'm\nDaniel Dabrowski",
-    "description": "Beginner Front End Devloper. My main interest is React but i happend to write in Node.js with MongoDB database. Additionaly i've had used TypeScript, Redux, Firebase and GraphQL. One of my main goals is reach senior level. Moving away from the topic of programming, in my free time i'm learning Japanese, i strive to be fluent in this language. In the future, i would like to learn Korean and Chinese as well."
+    "description": "Beginner Front End Devloper. My main interest is React but i happend to write in Node.js with MongoDB database. Additionaly i've had used TypeScript, Redux, Firebase and GraphQL. One of my main goals is reach senior level. Moving away from the topic of programming, in my free time i'm learning Japanese, i strive to be fluent in this language. In the future, i would like to learn Korean and Chinese as well.",
+    "nav": {
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "projects": {
+        "video-player": "Video editor with export function.",
+        "video-v2": "Video upload, authorization, playlists, channels, admin panel.",
+        "korean-practice": "Korean language help, authorization, account, words save, tests.",
+        "notes": "Creating notes, tags, favorites, user account, editor, trash.",
+        "chat-v2": "Authorization, accounts, youtube videos, multiple chats, links."
+    },
+    "contact": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send",
+        "required": "Required",
+        "email.error": "Invalid email!"
+    },
+    "languages": {
+        "polish": "Polish",
+        "english": "English",
+        "japanese": "日本語"
+    }
 }

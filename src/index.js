@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import i18n from 'i18next';
+import detector from "i18next-browser-languagedetector";
 import { initReactI18next, I18nextProvider} from "react-i18next";
 
 import translationEN from './locales/en/translation.json';
@@ -22,6 +23,7 @@ const resources = {
 }
 
 i18n
+    .use(detector)
     .use(initReactI18next)
     .init({
         resources,
@@ -29,7 +31,8 @@ i18n
         keySeparator: false,
         interpolation: {
             escapeValue: false
-        }
+        },
+        fallbackLng: 'pl'
     });
 
 ReactDOM.render(
