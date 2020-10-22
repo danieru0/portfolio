@@ -19,7 +19,11 @@
         "message": "Message",
         "submit": "Send",
         "required": "Required",
-        "email.error": "Invalid email!"
+        "email.error": "Invalid email!",
+        "success.title": "Success!",
+        "error.title": "Error",
+        "success": "Message has been send!",
+        "error": "Something went wrong"
     },
     "languages": {
         "polish": "Polish",

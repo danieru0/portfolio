@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import * as emailjs from 'emailjs-com';
+import {NotificationManager} from 'react-notifications';
 
 import t from '../../helpers/t';
 import useHover from '../../hooks/useHover';
@@ -12,6 +13,7 @@ import withHover from '../../hoc/withHover';
 import Input from '../atoms/Input';
 import TextArea from '../atoms/TextArea';
 import Button from '../atoms/Button';
+import Spinner from '../atoms/Spinner';
 
 const ButtonWithHover = withHover(Button);
 const InputWithHover = withHover(Input);
@@ -58,6 +60,7 @@ const StyledForm = styled(Form)`
     display: flex;
     flex-direction: column;
     width: 600px;
+    position: relative;
 `
 
 const Wrapper = styled.div`
@@ -67,8 +70,20 @@ const Wrapper = styled.div`
     margin-bottom: 30px;
 `
 
+const SubmittedOverlay = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.3);
+    z-index: 9;
+    display: ${({submitted}) => submitted ? 'flex' : 'none'};
+    justify-content: center;
+    align-items: center;
+`
+
 const Contact = ({active, index, prevIndex}) => {
     const [style, setStyle] = useState(null);
+    const [submitted, setSubmitted] = useState(false);
     const { handleMouseEnter, handleMouseLeave } = useHover(style);
     
     useEffect(() => {
@@ -79,9 +94,9 @@ const Contact = ({active, index, prevIndex}) => {
 
     const handleEnter = type => {
         if (type !== 'button') {
-            setStyle(`transform: scale(0.5) translate(-50%, -50%);`);
-        } else {
             setStyle(`transform: scale(1.5) translate(-50%, -50%);`);
+        } else {
+            setStyle(`transform: scale(0) translate(-50%, -50%);`);
         }
     }
 
@@ -96,20 +111,29 @@ const Contact = ({active, index, prevIndex}) => {
                 initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={ContactSchema}
                 onSubmit={(values) => {
-                    emailjs.send('1', 'template_smzehvr', values).then((result) => {
-                        
-                    }).catch((err) => {
-                        console.log(err);
-                    })
+                    if (!submitted) {
+                        setSubmitted(true);
+                        emailjs.send('1', 'template_smzehvr', values).then(() => {
+                            setSubmitted(false);
+                            NotificationManager.success(t('contact')['success.msg'], t('contact')['success.title']);
+                        }).catch((err) => {
+                            setSubmitted(false);
+                            NotificationManager.error(t('contact')['error.msg'], t('contact')['error.title']);
+                            console.log(err);
+                        })
+                    }
                 }}
             >
                 {({values, errors, handleChange}) => (
                     <StyledForm>
+                        <SubmittedOverlay submitted={submitted}>
+                            <Spinner />
+                        </SubmittedOverlay>
                         <Wrapper>    
                             <InputWithHover onMouseEnter={() => handleEnter('input')} onMouseLeave={handleLeave} error={errors.name} onChange={handleChange} value={values.name} name="name" placeholder={t("contact")["name"]} />
                             <InputWithHover onMouseEnter={() => handleEnter('input')} onMouseLeave={handleLeave} error={errors.email} onChange={handleChange} value={values.email} name="email" placeholder={t("contact")["email"]} />
                         </Wrapper>
-                        <TextArea onMouseEnter={() => handleEnter('textarea')} error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact")["message"]} />
+                        <TextArea onMouseEnter={() => handleEnter('textarea')} onMouseLeave={handleLeave} error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact")["message"]} />
                         <ButtonWithHover onMouseEnter={() => handleEnter('button')} onMouseLeave={handleLeave} type="submit">{t("contact")["submit"]}</ButtonWithHover>
                     </StyledForm>
                 )}

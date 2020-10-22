@@ -7,6 +7,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookSquare, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt, faLanguage, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import i18n from 'i18next';
+import {NotificationContainer} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 import mainContext, { initalState } from './context/mainContext';
 import mainReducer from './reducer/mainReducer';
@@ -68,6 +70,7 @@ function App() {
 							<Content>
 								<LeftSide />
 								<RightSide />
+								<NotificationContainer />
 							</Content>
 						</Container>
 					</cursorContext.Provider>

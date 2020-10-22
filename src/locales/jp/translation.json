@@ -7,11 +7,11 @@
         "contact": "コンタクト"
     },
     "projects": {
-        "video-player": "エクスポート機能ビデオエディタ",
-        "video-v2": "Video upload, authorization, playlists, channels, admin panel.",
-        "korean-practice": "Korean language help, authorization, account, words save, tests.",
-        "notes": "Creating notes, tags, favorites, user account, editor, trash.",
-        "chat-v2": "Authorization, accounts, youtube videos, multiple chats, links."
+        "video-player": "エクスポート機能ビデオエディタ。",
+        "video-v2": "ビデオアップロード、 オーソライズ, プレイリスト, チャンネル, アドミンパネル。",
+        "korean-practice": "韓国語ヘルプ, オーソライズ, アカウント,　言葉を保存,　テスト。",
+        "notes": "メモ作成する,　タグ, お気に入り, ユーザーアカウント, エディター, ゴミ。",
+        "chat-v2": "オーソライズ, アカウント, ユーチューブ動画, 複数のチャット, リンクス。"
     },
     "contact": {
         "name": "名前",
@@ -19,7 +19,11 @@
         "message": "メッセージ",
         "submit": "送信",
         "required": "必須",
-        "email.error": "無効なメール"
+        "email.error": "無効なメール",
+        "success.title": "Success!",
+        "error.title": "Error",
+        "success": "Message has been send!",
+        "error": "Something went wrong"
     },
     "languages": {
         "polish": "ポーランド",

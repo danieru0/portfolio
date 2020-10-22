@@ -19,7 +19,11 @@
         "message": "Wiadomość",
         "submit": "Wyślij",
         "required": "Wymagane",
-        "email.error": "Email jest niepoprawny!"
+        "email.error": "Email jest niepoprawny!",
+        "success.title": "Sukces!",
+        "error.title": "Błąd",
+        "success.msg": "Wiadomość została wysłana!",
+        "error.msg": "Coś poszło nie tak"
     },
     "languages": {
         "polish": "Polski",
