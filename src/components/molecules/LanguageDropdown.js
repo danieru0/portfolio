@@ -12,7 +12,8 @@ const Container = styled.ul`
     height: 100px;
     background-color: ${({theme}) => theme.colors.bgsecondary};
     position: absolute;
-    bottom: ${({bottom}) => `${bottom + 10}px`};
+    bottom: ${({bottom}) => `${bottom}px`};
+    left: ${({left}) => `${left}px`};
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -70,7 +71,7 @@ const LanguageDropDown = () => {
     }
 
     return (
-        <Container bottom={state.dropdownMenuBottom}>
+        <Container left={state.dropdownMenuLeft} bottom={state.dropdownMenuBottom}>
             <Item>
                 <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('pl')}>{t('languages')['polish']}</ButtonWithHover>
             </Item>

@@ -21,6 +21,10 @@ const Container = styled.div`
     @media (max-width: 1410px) {
         width: 50%;
     }
+
+    @media (max-width: 1190px) {
+        width: 100%;
+	}
 `
 
 const LeftSide = () => {

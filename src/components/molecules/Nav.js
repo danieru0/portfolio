@@ -16,6 +16,10 @@ const Container = styled.nav`
     @media (max-height: 840px) {
         margin-top: 30px;
     }
+
+    @media (max-width: 1190px) {
+        display: none;
+	}
 `
 
 const List = styled.ul`

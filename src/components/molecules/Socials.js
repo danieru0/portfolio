@@ -22,8 +22,22 @@ const Container = styled.ul`
     @media (max-height: 900px) {
         margin-top: 25px;
     }
+
+    @media (max-width: 520px) {
+        width: 100%;
+    }
+
+    @media (max-width: 440px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
 `
-const Item = styled.li``
+const Item = styled.li`
+    @media (max-width: 440px) {
+        margin: 0px 15px;
+    }
+`
 
 const Socials = () => {
     const { state, dispatch } = useContext(mainContext);
@@ -31,13 +45,18 @@ const Socials = () => {
 
     const handleLanguageButtonClick = e => {
         const rect = e.currentTarget.getBoundingClientRect();
+        const parentRect = e.currentTarget.parentElement.parentElement.parentElement.getBoundingClientRect();
+
         dispatch({
             type: 'UPDATE_DROPDOWN_MENU',
             payload: true
         })
         dispatch({
             type: 'UPDATE_DROPDOWN_MENU_BOTTOM',
-            payload: rect.bottom - rect.top,
+            payload: {
+                bottom: parentRect.bottom - rect.bottom + 30,
+                left: e.currentTarget.offsetLeft - 20
+            }
         })
     }
 

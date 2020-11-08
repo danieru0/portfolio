@@ -9,6 +9,7 @@ import '../../assets/swiperScrollbar.css';
 import t from '../../helpers/t';
 
 import Project from '../atoms/Project';
+import SectionTitle from '../atoms/SectionTitle';
 
 import VideoPlayerImg from '../../img/video-player.png';
 import VideoV2Img from '../../img/video-v2.png';
@@ -27,6 +28,15 @@ const Container = styled.div`
     transform: translateY(0px);
     transition: opacity .3s, transform .3s, visibility .3s;
 
+    @media (max-width: 1190px) {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        height: 760px;
+        margin-top: 80px;
+        transform: translateY(0px);
+	}
+    
     ${({active, index, prevIndex}) => active || (
         index > prevIndex ? (
             css`
@@ -42,16 +52,18 @@ const Container = styled.div`
             `
         )
     )}
+
 `
 
 const StyledSwiper = styled(Swiper)`
     width: 100%;
-    height: 100%;
+    height: 700px;
 `
 
 const Projects = ({active, index, prevIndex}) => {
     return (
         <Container active={active} index={index} prevIndex={prevIndex}>
+            <SectionTitle>{t('nav')['projects']}</SectionTitle>
             <StyledSwiper
                 slidesPerView={4}
                 direction="vertical"

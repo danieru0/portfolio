@@ -2,10 +2,12 @@ import React, { useState, useEffect, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import t from '../../helpers/t';
 import useHover from '../../hooks/useHover';
 import withHover from '../../hoc/withHover';
 
 import Skill from '../atoms/Skill';
+import SectionTitle from '../atoms/SectionTitle';
 
 const SkillWithHover = withHover(Skill);
 
@@ -25,6 +27,17 @@ const Container = styled.div`
         justify-content: center;
         align-content: center;
     }
+
+    @media (max-width: 1190px) {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        height: 650px;
+        margin-top: 80px;
+        justify-content: flex-start;
+        align-content: flex-start;
+        transform: translateY(0px);
+	}
 
     ${({active, index, prevIndex}) => active || (
         index > prevIndex ? (
@@ -89,6 +102,7 @@ const Skills = ({active, index, prevIndex}) => {
     return useMemo(() => {
         return (
             <Container active={active} index={index} prevIndex={prevIndex}>
+                <SectionTitle>{t('nav')['skills']}</SectionTitle>
                 <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>html</SkillWithHover>
                 <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>javascript</SkillWithHover>
                 <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>css</SkillWithHover>

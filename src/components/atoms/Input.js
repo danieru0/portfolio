@@ -29,6 +29,18 @@ const StyledInput = styled.input`
         left: -8px;
         font-size: 16px;
     }
+
+    @media (max-width: 1305px) {
+        width: 240px;
+    }
+
+    @media (max-width: 1190px) {
+        width: 285px;
+    }
+
+    @media (max-width: 680px) {
+        width: 100%;
+    }
 `
 
 const StyledLabel = styled.label`

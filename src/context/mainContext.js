@@ -4,7 +4,8 @@ export const initalState = {
     active: 0,
     prevActive: 0,
     dropdownMenu: false,
-    dropdownMenuBottom: 30,
+    dropdownMenuBottom: 0,
+    dropdownMenuLeft: 0,
     language: 'PL'
 }
 

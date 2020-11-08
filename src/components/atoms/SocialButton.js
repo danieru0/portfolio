@@ -12,6 +12,10 @@ const Container = styled.a`
     user-select: none;
     font-size: 16px;
     cursor: none;
+
+    @media (max-width: 1190px) {
+        cursor: pointer;
+	}
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`

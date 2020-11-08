@@ -15,6 +15,10 @@ const Container = styled.div`
     z-index: 99999999;
 
     ${({cursorStyle}) => cursorStyle};
+
+    @media (max-width: 1190px) {
+        display: none;
+	}
 `
 
 const Circle = ({cursorStyle}) => {

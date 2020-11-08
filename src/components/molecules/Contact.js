@@ -14,6 +14,7 @@ import Input from '../atoms/Input';
 import TextArea from '../atoms/TextArea';
 import Button from '../atoms/Button';
 import Spinner from '../atoms/Spinner';
+import SectionTitle from '../atoms/SectionTitle';
 
 const ButtonWithHover = withHover(Button);
 const InputWithHover = withHover(Input);
@@ -38,7 +39,19 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
+    @media (max-width: 1190px) {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        height: 500px;
+        margin-top: 80px;
+        transform: translateY(0px);
+        justify-content: center;
+        align-items: flex-start;
+	}
+    
     ${({active, index, prevIndex}) => active || (
         index > prevIndex ? (
             css`
@@ -54,6 +67,7 @@ const Container = styled.div`
             `
         )
     )}
+
 `
 
 const StyledForm = styled(Form)`
@@ -61,6 +75,18 @@ const StyledForm = styled(Form)`
     flex-direction: column;
     width: 600px;
     position: relative;
+
+    @media (max-width: 1305px) {
+        width: 560px;
+    }
+
+    @media (max-width: 1190px) {
+        width: 600px;
+    }
+
+    @media (max-width: 680px) {
+        width: 100%;
+    }
 `
 
 const Wrapper = styled.div`
@@ -68,6 +94,11 @@ const Wrapper = styled.div`
     width: 100%;
     justify-content: space-between;
     margin-bottom: 30px;
+
+    @media (max-width: 680px) {
+        flex-direction: column;
+        height: 110px;
+    }
 `
 
 const SubmittedOverlay = styled.div`
@@ -107,6 +138,7 @@ const Contact = ({active, index, prevIndex}) => {
 
     return (
         <Container active={active} index={index} prevIndex={prevIndex}>
+            <SectionTitle>{t('nav')['contact']}</SectionTitle>
             <Formik
                 initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={ContactSchema}

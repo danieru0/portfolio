@@ -9,7 +9,7 @@ const mainReducer = (state, action) => {
         case 'UPDATE_DROPDOWN_MENU':
             return {...state, dropdownMenu: action.payload};
         case 'UPDATE_DROPDOWN_MENU_BOTTOM':
-            return {...state, dropdownMenuBottom: action.payload};
+            return {...state, dropdownMenuBottom: action.payload.bottom, dropdownMenuLeft: action.payload.left};
         default:
             return state;
     }

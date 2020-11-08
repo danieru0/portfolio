@@ -10,6 +10,13 @@ import Contact from '../molecules/Contact';
 const Container = styled.div`
     width: 45%;
     position: relative;
+
+    @media (max-width: 1190px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+	}
 `
 
 const RightSide = () => {

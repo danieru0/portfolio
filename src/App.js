@@ -25,6 +25,10 @@ const Container = styled.div`
 	width: 100%;
 	background: ${({theme}) => theme.colors.bgprimary};
 	cursor: none;
+
+	@media (max-width: 1190px) {
+        cursor: default;
+	}
 `
 
 const Content = styled.div`
@@ -39,6 +43,14 @@ const Content = styled.div`
 	@media (max-width: 1610px) {
         padding: 100px 50px;
     }
+
+	@media (max-width: 1190px) {
+		flex-direction: column;
+		min-height: auto;
+		justify-content: center;
+		align-items: center;
+		padding: 50px 50px;
+	}
 `
 
 function App() {
@@ -54,8 +66,10 @@ function App() {
 		})
 
 		document.addEventListener('mousemove', e => {
-			cursor.style.left = `${e.pageX}px`;
-			cursor.style.top = `${e.pageY}px`;
+			if (window.innerWidth > 1190) {
+				cursor.style.left = `${e.pageX}px`;
+				cursor.style.top = `${e.pageY}px`;
+			}
 		})
 	}, [])
 
