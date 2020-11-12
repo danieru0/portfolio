@@ -37,13 +37,17 @@ const Button = styled.button`
     &:focus {
         background-color: ${({theme}) => theme.colors.bgsecondaryhover};
     }
+
+    @media (max-width: 1190px) {
+        cursor: pointer;
+    }
 `
 
 const ButtonWithHover = withHover(Button);
 
 const LanguageDropDown = () => {
     const { state, dispatch } = useContext(mainContext);
-    const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(1.5) translate(-50%, -50%);`);
+    const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(1.5) translate(-50%, -50%)`);
 
     useEffect(() => {
         const handleOutsideClick = e => {

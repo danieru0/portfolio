@@ -35,6 +35,9 @@ const Container = styled.div`
         height: 760px;
         margin-top: 80px;
         transform: translateY(0px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 	}
     
     ${({active, index, prevIndex}) => active || (
@@ -58,6 +61,19 @@ const Container = styled.div`
 const StyledSwiper = styled(Swiper)`
     width: 100%;
     height: 700px;
+
+    @media (max-width: 1190px) {
+        width: 80%;
+        height: 700px !important;
+    }
+
+    @media (max-width: 820px) {
+        width: 100%;
+    }
+
+    @media (max-height: 840px) {
+        height: 600px;
+    }
 `
 
 const Projects = ({active, index, prevIndex}) => {

@@ -18,6 +18,10 @@ const StyledButton = styled.button`
     &:hover {
         background-color: ${({theme}) => theme.colors.bgsecondaryhover};
     }
+
+    @media (max-width: 1190px) {
+        cursor: pointer;
+    }
 `
 
 const Button = ({children, type, ...props}) => {

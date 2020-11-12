@@ -15,6 +15,14 @@ const H1 = styled.h1`
         font-size: 50px;
         line-height: 50px;
     }
+
+    @media (max-width: 1190px) {
+        text-align: center;
+    }
+
+    @media (max-width: 820px) {
+        text-align: left;
+    }
 `
 
 const Title = ({children}) => {

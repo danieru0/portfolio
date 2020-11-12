@@ -32,12 +32,20 @@ const Container = styled.div`
         position: relative;
         opacity: 1;
         visibility: visible;
-        height: 650px;
+        height: 300px;
         margin-top: 80px;
-        justify-content: flex-start;
-        align-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
         transform: translateY(0px);
 	}
+
+    @media (max-width: 820px) {
+        height: 650px;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
 
     ${({active, index, prevIndex}) => active || (
         index > prevIndex ? (
@@ -56,13 +64,31 @@ const Container = styled.div`
     )}
 `
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: 1190px) {
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+	}
+
+    @media (max-width: 820px) {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+`
+
 const Skills = ({active, index, prevIndex}) => {
     const [scale, setScale] = useState(null); 
     const { handleMouseEnter, handleMouseLeave } = useHover(`
-        transform: scale(${scale}) translate(-50%, -50%);
         mix-blend-mode: difference;
         background: #fff;
         border: 1px solid #000;
+        transform: scale(${scale}) translate(-50%, -50%)
     `);
 
     useEffect(() => {
@@ -103,20 +129,22 @@ const Skills = ({active, index, prevIndex}) => {
         return (
             <Container active={active} index={index} prevIndex={prevIndex}>
                 <SectionTitle>{t('nav')['skills']}</SectionTitle>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>html</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>javascript</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>css</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>react</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>redux</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>styled-components</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>typescript</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>node.js</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>firebase</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>graphql</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>socket.io</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>mongodb</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={21}>multer</SkillWithHover>
-                <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={21}>ffmpeg</SkillWithHover>
+                <Wrapper>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>html</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>javascript</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>css</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={92}>react</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>redux</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>styled-components</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>typescript</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>node.js</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={56}>firebase</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>graphql</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>socket.io</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={34}>mongodb</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={21}>multer</SkillWithHover>
+                    <SkillWithHover onMouseEnter={handleEnter} onMouseLeave={handleLeave} onMouseMove={handleMove} onMouseOut={handleMoveOut} size={21}>ffmpeg</SkillWithHover>
+                </Wrapper>
             </Container>
         );
     }, [active, index, prevIndex])

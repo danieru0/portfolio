@@ -12,6 +12,11 @@ const Container = styled.a`
     color: ${({theme}) => theme.colors.secondary};
     text-decoration: none;
     overflow: hidden;
+    position: relative;
+
+    @media (max-width: 1190px) {
+        cursor: pointer;
+    }
 `
 
 const Details = styled.div`
@@ -19,6 +24,7 @@ const Details = styled.div`
     display: flex;
     flex-direction: column;
     padding: 15px 30px;
+    z-index: 2;
 
     @media (max-width: 1410px) {
         width: 100%;
@@ -27,10 +33,28 @@ const Details = styled.div`
 
 const Image = styled.div`
     width: 45%;
+    height: 100%;
     background-image: ${({img}) => `url(${img})`};
     background-size: cover;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
 
     @media (max-width: 1410px) {
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+        }
+    }
+
+    @media (max-width: 620px) {
         display: none;
     }
 `
@@ -71,6 +95,10 @@ const Description = styled.span`
     color: ${({theme}) => theme.colors.primary};
     font-family: ${({theme}) => theme.fonts.secondary};
     font-size: 14px;
+
+    @media (max-width: 1410px) {
+        color: #fff;
+    }
 `
 
 const Project = ({technologies, title, description, img, href}) => {

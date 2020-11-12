@@ -39,6 +39,7 @@ const Content = styled.div`
 	justify-content: space-between;
 	align-items: stretch;
     padding: 100px 150px;
+	overflow: hidden;
 
 	@media (max-width: 1610px) {
         padding: 100px 50px;
@@ -50,6 +51,7 @@ const Content = styled.div`
 		justify-content: center;
 		align-items: center;
 		padding: 50px 50px;
+		overflow: auto;
 	}
 `
 
@@ -71,6 +73,15 @@ function App() {
 				cursor.style.top = `${e.pageY}px`;
 			}
 		})
+
+		document.addEventListener('mousedown', () => {
+			cursor.style.transform = 'scale(0.9) translate(-50%, -50%)';
+		})
+
+		document.addEventListener('mouseup', () => {
+			cursor.style.transform = 'scale(1) translate(-50%, -50%)';
+		})
+
 	}, [])
 
 	return (

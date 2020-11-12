@@ -24,7 +24,12 @@ const Container = styled.div`
 
     @media (max-width: 1190px) {
         width: 100%;
+        align-items: center;
 	}
+
+    @media (max-width: 820px) {
+        align-items: flex-start;
+    }
 `
 
 const LeftSide = () => {

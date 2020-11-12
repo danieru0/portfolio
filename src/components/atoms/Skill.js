@@ -22,7 +22,11 @@ const Span = styled.span`
     }
 
     @media (max-width: 1190px) {
-        margin: 5px 0px;
+        margin: 8px 10px;
+    }
+
+    @media (max-height: 840px) {
+        font-size: 50px;
     }
 `
 

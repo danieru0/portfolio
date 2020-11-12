@@ -7,6 +7,16 @@ const P = styled.p`
     font-family: ${({theme}) => theme.fonts.secondary};
     user-select: none;
     font-size: 16px;
+
+    @media (max-width: 1190px) {
+        width: 90%;
+        text-align: center;
+    }
+
+    @media (max-width: 820px) {
+        width: 100%;
+        text-align: left;
+    }
 `
 
 const Description = ({children, className}) => {

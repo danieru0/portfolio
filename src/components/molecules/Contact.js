@@ -49,8 +49,13 @@ const Container = styled.div`
         margin-top: 80px;
         transform: translateY(0px);
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
 	}
+
+    @media (max-width: 820px) {
+        justify-content: center;
+        align-items: flex-start;
+    }
     
     ${({active, index, prevIndex}) => active || (
         index > prevIndex ? (
@@ -123,12 +128,8 @@ const Contact = ({active, index, prevIndex}) => {
         }
     }, [style]); //eslint-disable-line
 
-    const handleEnter = type => {
-        if (type !== 'button') {
-            setStyle(`transform: scale(1.5) translate(-50%, -50%);`);
-        } else {
-            setStyle(`transform: scale(0) translate(-50%, -50%);`);
-        }
+    const handleMouseHover = () => {
+        setStyle(`transform: scale(1.5) translate(-50%, -50%)`);
     }
 
     const handleLeave = () => {
@@ -162,11 +163,11 @@ const Contact = ({active, index, prevIndex}) => {
                             <Spinner />
                         </SubmittedOverlay>
                         <Wrapper>    
-                            <InputWithHover onMouseEnter={() => handleEnter('input')} onMouseLeave={handleLeave} error={errors.name} onChange={handleChange} value={values.name} name="name" placeholder={t("contact")["name"]} />
-                            <InputWithHover onMouseEnter={() => handleEnter('input')} onMouseLeave={handleLeave} error={errors.email} onChange={handleChange} value={values.email} name="email" placeholder={t("contact")["email"]} />
+                            <InputWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.name} onChange={handleChange} value={values.name} name="name" placeholder={t("contact")["name"]} />
+                            <InputWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.email} onChange={handleChange} value={values.email} name="email" placeholder={t("contact")["email"]} />
                         </Wrapper>
-                        <TextArea onMouseEnter={() => handleEnter('textarea')} onMouseLeave={handleLeave} error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact")["message"]} />
-                        <ButtonWithHover onMouseEnter={() => handleEnter('button')} onMouseLeave={handleLeave} type="submit">{t("contact")["submit"]}</ButtonWithHover>
+                        <TextArea onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact")["message"]} />
+                        <ButtonWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} type="submit">{t("contact")["submit"]}</ButtonWithHover>
                     </StyledForm>
                 )}
             </Formik>

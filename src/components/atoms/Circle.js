@@ -14,7 +14,7 @@ const Container = styled.div`
     pointer-events: none;
     z-index: 99999999;
 
-    ${({cursorStyle}) => cursorStyle};
+    ${({cursorStyle}) => `${cursorStyle} !important`};
 
     @media (max-width: 1190px) {
         display: none;

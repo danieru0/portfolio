@@ -33,7 +33,7 @@ const Item = styled.li``
 
 const Nav = () => {
     const { state, dispatch } = useContext(mainContext);
-    const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(0) translate(-50%, -50%);`);
+    const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(1.5) translate(-50%, -50%)`);
 
     const handleClick = value => {
         dispatch({

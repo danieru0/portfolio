@@ -41,7 +41,7 @@ const Item = styled.li`
 
 const Socials = () => {
     const { state, dispatch } = useContext(mainContext);
-    const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(1.5) translate(-50%, -50%);`);
+    const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(1.5) translate(-50%, -50%)`);
 
     const handleLanguageButtonClick = e => {
         const rect = e.currentTarget.getBoundingClientRect();

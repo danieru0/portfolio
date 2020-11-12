@@ -36,6 +36,7 @@ const StyledInput = styled.input`
 
     @media (max-width: 1190px) {
         width: 285px;
+        cursor: text;
     }
 
     @media (max-width: 680px) {

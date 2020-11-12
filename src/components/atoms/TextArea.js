@@ -31,6 +31,10 @@ const StyledTextArea = styled.textarea`
         left: -8px;
         font-size: 16px;
     }
+
+    @media (max-width: 1190px) {
+        cursor: text;
+    }
 `
 
 const StyledLabel = styled.label`
