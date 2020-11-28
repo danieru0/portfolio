@@ -19,8 +19,8 @@ const Container = styled.ul`
     width: 450px;
     margin-top: auto;
 
-    @media (max-height: 900px) {
-        margin-top: 25px;
+    @media (max-width: 1190px) {
+        margin-top: 15px;
     }
 
     @media (max-width: 520px) {

@@ -11,7 +11,9 @@
         "video-v2": "Video upload, authorization, playlists, channels, admin panel.",
         "korean-practice": "Korean language help, authorization, account, words save, tests.",
         "notes": "Creating notes, tags, favorites, user account, editor, trash.",
-        "chat-v2": "Authorization, accounts, youtube videos, multiple chats, links."
+        "chat-v2": "Authorization, accounts, youtube videos, multiple chats, links.",
+        "windows": "Creating files, playing videos, music and pictures, calculator, terminal, paint",
+        "global": "PSD to HTML"
     },
     "contact": {
         "name": "Name",

@@ -12,6 +12,7 @@ const Container = styled.button`
     border: none;
     font-size: 16px;
     cursor: none;
+    user-select: none;
 
     @media (max-width: 1190px) {
         cursor: pointer;

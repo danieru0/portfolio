@@ -11,7 +11,9 @@
         "video-v2": "Wrzucanie filmów, autoryzacja, własna playlista, kanały, panel admina.",
         "korean-practice": "Pomoc w nauce języka koreańskiego, autoryzacja, własne konto, zapisywanie słówek, testy.",
         "notes": "Tworzenie notatek, tagi, ulubione, konto użytkownika, edytor, kosz.",
-        "chat-v2": "Autoryzacja, konta użytkowników, filmy z youtube, wiele czatów, linki."
+        "chat-v2": "Autoryzacja, konta użytkowników, filmy z youtube, wiele czatów, linki.",
+        "windows": "Tworzenie plików, odtwarzanie filmów, muzyki oraz zdjęć, kalkulator, terminal, paint.",
+        "global": "PSD to HTML"
     },
     "contact": {
         "name": "Imie",

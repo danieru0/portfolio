@@ -11,7 +11,9 @@
         "video-v2": "ビデオアップロード、 オーソライズ, プレイリスト, チャンネル, アドミンパネル。",
         "korean-practice": "韓国語ヘルプ, オーソライズ, アカウント,　言葉を保存,　テスト。",
         "notes": "メモ作成する,　タグ, お気に入り, ユーザーアカウント, エディター, ゴミ。",
-        "chat-v2": "オーソライズ, アカウント, ユーチューブ動画, 複数のチャット, リンクス。"
+        "chat-v2": "オーソライズ, アカウント, ユーチューブ動画, 複数のチャット, リンクス。",
+        "windows": "Creating files, playing videos, music and pictures, calculator, terminal, paint",
+        "global": "PSD to HTML"
     },
     "contact": {
         "name": "名前",

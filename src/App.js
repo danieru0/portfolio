@@ -74,14 +74,18 @@ function App() {
 			}
 		})
 
-		document.addEventListener('mousedown', () => {
-			cursor.style.transform = 'scale(0.9) translate(-50%, -50%)';
+		document.addEventListener('mousedown', (e) => {
+			console.log('down');
+			if (window.innerWidth > 1190) {
+				cursor.style.transform = 'scale(0.9) translate(-50%, -50%)';
+				cursor.style.left = `${e.pageX}px`;
+				cursor.style.top = `${e.pageY}px`;
+			}
 		})
 
 		document.addEventListener('mouseup', () => {
 			cursor.style.transform = 'scale(1) translate(-50%, -50%)';
 		})
-
 	}, [])
 
 	return (

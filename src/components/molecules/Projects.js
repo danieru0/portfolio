@@ -16,6 +16,9 @@ import VideoV2Img from '../../img/video-v2.png';
 import KoreanPracticeImg from '../../img/korean-practice.png';
 import NotesImg from '../../img/notes.png';
 import ChatV2Img from '../../img/chat-v2.png';
+import WindowsImg from '../../img/windowsapp.jpg';
+import GlobalImg from '../../img/global.png';
+
 
 SwiperCore.use([Scrollbar, Mousewheel]);
 
@@ -86,6 +89,7 @@ const Projects = ({active, index, prevIndex}) => {
                 mousewheel={true}
                 scrollbar={{draggable: true}}
                 spaceBetween={10}
+                touchStartPreventDefault={false}
             >
                 <SwiperSlide>
                     <Project title="video-player" description={t('projects')['video-player']} technologies={['react', 'redux', 'typescript', 'node.js']} img={VideoPlayerImg} href="https://github.com/elosiktv/video-editor"/>
@@ -101,6 +105,12 @@ const Projects = ({active, index, prevIndex}) => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Project title="chat-v2" description={t('projects')['chat-v2']} technologies={['react', 'redux', 'node.js', 'mongodb', 'socket.io']} img={ChatV2Img} href="https://github.com/elosiktv/chat-v2"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Project title="windows" description={t('projects')['windows']} technologies={['react', 'redux']} img={WindowsImg} href="https://github.com/elosiktv/windows"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Project title="global" description={t('projects')['windows']} technologies={['html', 'scss', 'javascript', 'gulp']} img={GlobalImg} href="https://github.com/elosiktv/global"/>
                 </SwiperSlide>
             </StyledSwiper>
         </Container>
