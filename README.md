@@ -1,8 +1,8 @@
-![Portfolio image](https://i.vgy.me/RroPKO.png)
+![Portfolio image](https://i.vgy.me/PH21sT.png)
 
 # Portfolio
 
-> Everyone needs his own place ;)
+> Everyone needs their own place ;)
 
 **Technologies**
 - React
