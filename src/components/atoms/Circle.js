@@ -13,6 +13,9 @@ const Container = styled.div`
     transform-origin: 0 0;
     pointer-events: none;
     z-index: 99999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     ${({cursorStyle}) => `${cursorStyle} !important`};
 
@@ -21,9 +24,17 @@ const Container = styled.div`
 	}
 `
 
+const Pointer = styled.div`
+    width: 2px;
+    height: 2px;
+    background: red;
+`
+
 const Circle = ({cursorStyle}) => {
     return (
-        <Container cursorStyle={cursorStyle} className="cursor" />
+        <Container cursorStyle={cursorStyle} className="cursor">
+            <Pointer className="cursor-pointer"/>
+        </Container>
     );
 };
 

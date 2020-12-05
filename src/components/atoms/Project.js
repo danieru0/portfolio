@@ -14,6 +14,10 @@ const Container = styled.a`
     overflow: hidden;
     position: relative;
 
+    &:hover {
+        background-color: ${({theme}) => theme.colors.bgsecondaryhover};
+    }
+
     @media (max-width: 1190px) {
         cursor: pointer;
     }

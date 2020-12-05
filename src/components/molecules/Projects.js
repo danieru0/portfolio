@@ -110,7 +110,7 @@ const Projects = ({active, index, prevIndex}) => {
                     <Project title="windows" description={t('projects')['windows']} technologies={['react', 'redux']} img={WindowsImg} href="https://github.com/elosiktv/windows"/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Project title="global" description={t('projects')['windows']} technologies={['html', 'scss', 'javascript', 'gulp']} img={GlobalImg} href="https://github.com/elosiktv/global"/>
+                    <Project title="global" description={t('projects')['global']} technologies={['html', 'scss', 'javascript', 'gulp']} img={GlobalImg} href="https://github.com/elosiktv/global"/>
                 </SwiperSlide>
             </StyledSwiper>
         </Container>

@@ -75,7 +75,6 @@ function App() {
 		})
 
 		document.addEventListener('mousedown', (e) => {
-			console.log('down');
 			if (window.innerWidth > 1190) {
 				cursor.style.transform = 'scale(0.9) translate(-50%, -50%)';
 				cursor.style.left = `${e.pageX}px`;
