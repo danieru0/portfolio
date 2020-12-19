@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.f1eb1b49.chunk.css",
-    "main.js": "/portfolio/static/js/main.e008fa91.chunk.js",
+    "main.js": "/portfolio/static/js/main.036eb5b1.chunk.js",
     "runtime-main.js": "/portfolio/static/js/runtime-main.209c2d7e.js",
     "static/css/2.13c75a1b.chunk.css": "/portfolio/static/css/2.13c75a1b.chunk.css",
-    "static/js/2.6a3b3fc8.chunk.js": "/portfolio/static/js/2.6a3b3fc8.chunk.js",
+    "static/js/2.874a60bf.chunk.js": "/portfolio/static/js/2.874a60bf.chunk.js",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.ab8fc40fafacc55e9773df48a0b8f794.js": "/portfolio/precache-manifest.ab8fc40fafacc55e9773df48a0b8f794.js",
+    "precache-manifest.6a70a10e351d004eec0a8b48b8111a54.js": "/portfolio/precache-manifest.6a70a10e351d004eec0a8b48b8111a54.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/js/2.6a3b3fc8.chunk.js.LICENSE.txt": "/portfolio/static/js/2.6a3b3fc8.chunk.js.LICENSE.txt",
+    "static/js/2.874a60bf.chunk.js.LICENSE.txt": "/portfolio/static/js/2.874a60bf.chunk.js.LICENSE.txt",
     "static/media/chat-v2.png": "/portfolio/static/media/chat-v2.84423a6d.png",
     "static/media/global.png": "/portfolio/static/media/global.850e888b.png",
     "static/media/korean-practice.png": "/portfolio/static/media/korean-practice.27f1b5ad.png",
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.209c2d7e.js",
     "static/css/2.13c75a1b.chunk.css",
-    "static/js/2.6a3b3fc8.chunk.js",
+    "static/js/2.874a60bf.chunk.js",
     "static/css/main.f1eb1b49.chunk.css",
-    "static/js/main.e008fa91.chunk.js"
+    "static/js/main.036eb5b1.chunk.js"
   ]
 }
