@@ -23,6 +23,15 @@ const H1 = styled.h1`
     @media (max-width: 820px) {
         text-align: left;
     }
+
+    @media (max-width: 540px) {
+        text-align: center;
+        font-size: 45px;
+    }
+
+    @media (max-width: 340px) {
+        font-size: 38px;
+    }
 `
 
 const Title = ({children}) => {

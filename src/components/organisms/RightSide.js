@@ -12,11 +12,15 @@ const Container = styled.div`
     position: relative;
 
     @media (max-width: 1190px) {
-        width: 100%;
+        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: space-between;
 	}
+
+    @media (max-width: 820px) {
+        width: 100%;
+    }
 `
 
 const RightSide = () => {

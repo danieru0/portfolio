@@ -7,7 +7,7 @@
         "contact": "Contact"
     },
     "projects": {
-        "video-player": "Video editor with export function.",
+        "video-editor": "Video editor with export function.",
         "video-v2": "Video upload, authorization, playlists, channels, admin panel.",
         "korean-practice": "Korean language help, authorization, account, words save, tests.",
         "notes": "Creating notes, tags, favorites, user account, editor, trash.",
@@ -21,13 +21,13 @@
         "message": "Message",
         "submit": "Send",
         "required": "Required",
-        "email.error": "Invalid email!",
-        "success.title": "Success!",
-        "error.title": "Error",
+        "email-error": "Invalid email!",
+        "success-title": "Success!",
+        "error-title": "Error",
         "success": "Message has been send!",
         "error": "Something went wrong"
     },
-    "languages": {
+    "language": {
         "polish": "Polish",
         "english": "English",
         "japanese": "日本語"

@@ -28,6 +28,23 @@ const Span = styled.span`
     @media (max-height: 840px) {
         font-size: 50px;
     }
+
+    @media (max-width: 820px) {
+        margin: 8px 0px;
+    }
+
+    @media (max-width: 650px) {
+        line-height: 40px;
+        margin: 3px 3px;
+    }
+
+    @media (max-width: 540px) {
+        text-align: center;
+    }
+
+    @media (max-width: 420px) {
+        font-size: 40px;
+    }
 `
 
 const Skill = ({children, size, onMouseMove, onMouseOut, onMouseEnter, ...props}) => {

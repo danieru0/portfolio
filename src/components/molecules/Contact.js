@@ -5,8 +5,8 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import * as emailjs from 'emailjs-com';
 import {NotificationManager} from 'react-notifications';
+import { useTranslation } from 'react-i18next';
 
-import t from '../../helpers/t';
 import useHover from '../../hooks/useHover';
 import withHover from '../../hoc/withHover';
 
@@ -23,7 +23,7 @@ emailjs.init('user_1DsEz9qOuFoZmSe2wAUp0');
 
 const ContactSchema = Yup.object().shape({
     name: Yup.string().required('required'),
-    email: Yup.string().email('email.error').required('required'),
+    email: Yup.string().email('email-error').required('required'),
     message: Yup.string().required('required')
 })
 
@@ -55,6 +55,10 @@ const Container = styled.div`
     @media (max-width: 820px) {
         justify-content: center;
         align-items: flex-start;
+    }
+
+    @media (max-width: 540px) {
+        align-items: center;
     }
     
     ${({active, index, prevIndex}) => active || (
@@ -118,6 +122,7 @@ const SubmittedOverlay = styled.div`
 `
 
 const Contact = ({active, index, prevIndex}) => {
+    const { t } = useTranslation();
     const [style, setStyle] = useState(null);
     const [submitted, setSubmitted] = useState(false);
     const { handleMouseEnter, handleMouseLeave } = useHover(style);
@@ -139,7 +144,7 @@ const Contact = ({active, index, prevIndex}) => {
 
     return (
         <Container active={active} index={index} prevIndex={prevIndex}>
-            <SectionTitle>{t('nav')['contact']}</SectionTitle>
+            <SectionTitle>{t('nav.contact')}</SectionTitle>
             <Formik
                 initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={ContactSchema}
@@ -148,10 +153,10 @@ const Contact = ({active, index, prevIndex}) => {
                         setSubmitted(true);
                         emailjs.send('1', 'template_smzehvr', values).then(() => {
                             setSubmitted(false);
-                            NotificationManager.success(t('contact')['success.msg'], t('contact')['success.title']);
+                            NotificationManager.success(t('contact.success-msg'), t('contact.success-title'));
                         }).catch((err) => {
                             setSubmitted(false);
-                            NotificationManager.error(t('contact')['error.msg'], t('contact')['error.title']);
+                            NotificationManager.error(t('contact.error-msg'), t('contact.error-title'));
                             console.log(err);
                         })
                     }
@@ -163,11 +168,11 @@ const Contact = ({active, index, prevIndex}) => {
                             <Spinner />
                         </SubmittedOverlay>
                         <Wrapper>    
-                            <InputWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.name} onChange={handleChange} value={values.name} name="name" placeholder={t("contact")["name"]} />
-                            <InputWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.email} onChange={handleChange} value={values.email} name="email" placeholder={t("contact")["email"]} />
+                            <InputWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.name} onChange={handleChange} value={values.name} name="name" placeholder={t("contact.name")} />
+                            <InputWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.email} onChange={handleChange} value={values.email} name="email" placeholder={t("contact.email")} />
                         </Wrapper>
-                        <TextArea onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact")["message"]} />
-                        <ButtonWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} type="submit">{t("contact")["submit"]}</ButtonWithHover>
+                        <TextArea onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} error={errors.message} onChange={handleChange} value={values.message} name="message" placeholder={t("contact.message")} />
+                        <ButtonWithHover onMouseEnter={handleMouseHover} onMouseLeave={handleLeave} type="submit">{t("contact.submit")}</ButtonWithHover>
                     </StyledForm>
                 )}
             </Formik>

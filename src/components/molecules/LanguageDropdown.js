@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
 
-import t from '../../helpers/t';
 import withHover from '../../hoc/withHover';
 import useHover from '../../hooks/useHover';
 import mainContext from '../../context/mainContext';;
@@ -46,6 +45,7 @@ const Button = styled.button`
 const ButtonWithHover = withHover(Button);
 
 const LanguageDropDown = () => {
+    const { t, i18n } = useTranslation();
     const { state, dispatch } = useContext(mainContext);
     const { handleMouseEnter, handleMouseLeave } = useHover(`transform: scale(1.5) translate(-50%, -50%)`);
 
@@ -77,13 +77,13 @@ const LanguageDropDown = () => {
     return (
         <Container left={state.dropdownMenuLeft} bottom={state.dropdownMenuBottom}>
             <Item>
-                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('pl')}>{t('languages')['polish']}</ButtonWithHover>
+                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('pl')}>{t('language.polish')}</ButtonWithHover>
             </Item>
             <Item>
-                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('en')}>{t('languages')['english']}</ButtonWithHover>
+                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('en')}>{t('language.english')}</ButtonWithHover>
             </Item>
             <Item>
-                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('jp')}>{t('languages')['japanese']}</ButtonWithHover>
+                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('jp')}>{t('language.japanese')}</ButtonWithHover>
             </Item>
         </Container>
     );

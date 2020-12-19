@@ -7,7 +7,7 @@
         "contact": "コンタクト"
     },
     "projects": {
-        "video-player": "エクスポート機能ビデオエディタ。",
+        "video-editor": "エクスポート機能ビデオエディタ。",
         "video-v2": "ビデオアップロード、 オーソライズ, プレイリスト, チャンネル, アドミンパネル。",
         "korean-practice": "韓国語ヘルプ, オーソライズ, アカウント,　言葉を保存,　テスト。",
         "notes": "メモ作成する,　タグ, お気に入り, ユーザーアカウント, エディター, ゴミ。",
@@ -21,13 +21,13 @@
         "message": "メッセージ",
         "submit": "送信",
         "required": "必須",
-        "email.error": "無効なメール",
-        "success.title": "Success!",
-        "error.title": "Error",
+        "email-error": "無効なメール",
+        "success-title": "Success!",
+        "error-title": "Error",
         "success": "Message has been send!",
         "error": "Something went wrong"
     },
-    "languages": {
+    "language": {
         "polish": "ポーランド",
         "english": "英語",
         "japanese": "日本語"

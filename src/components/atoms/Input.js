@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-import t from '../../helpers/t';
+import { useTranslation } from 'react-i18next';
 
 const Container = styled.div`
     position: relative;
@@ -65,11 +64,13 @@ const ErrorMessage = styled.span`
 `
 
 const Input = ({placeholder, name, value, onChange, error, ...props}) => {
+    const { t } = useTranslation();
+    
     return (
         <Container>
             <StyledInput {...props} onChange={onChange} value={value} name={name} required/>
             <StyledLabel htmlFor={name}>{placeholder}</StyledLabel>
-            <ErrorMessage>{t("contact")[error]}</ErrorMessage>
+            <ErrorMessage>{error ? t(`contact.${error}`) : ''}</ErrorMessage>
         </Container>
     );
 };

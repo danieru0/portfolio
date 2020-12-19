@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import t from '../../helpers/t';
+import { useTranslation } from 'react-i18next';
 
 import Title from '../atoms/Title';
 import Description from '../atoms/Description'
@@ -11,6 +10,8 @@ const StyledDescription = styled(Description)`
 `
 
 const Header = () => {
+    const { t } = useTranslation();
+
     return (
         <>
             <Title>{t('header')}</Title>

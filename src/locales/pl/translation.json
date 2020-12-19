@@ -7,7 +7,7 @@
         "contact": "Kontakt"
     },
     "projects": {
-        "video-player": "Edytor filmów z możliwością eksportu.",
+        "video-editor": "Edytor filmów z możliwością eksportu.",
         "video-v2": "Wrzucanie filmów, autoryzacja, własna playlista, kanały, panel admina.",
         "korean-practice": "Pomoc w nauce języka koreańskiego, autoryzacja, własne konto, zapisywanie słówek, testy.",
         "notes": "Tworzenie notatek, tagi, ulubione, konto użytkownika, edytor, kosz.",
@@ -21,13 +21,13 @@
         "message": "Wiadomość",
         "submit": "Wyślij",
         "required": "Wymagane",
-        "email.error": "Email jest niepoprawny!",
-        "success.title": "Sukces!",
-        "error.title": "Błąd",
-        "success.msg": "Wiadomość została wysłana!",
-        "error.msg": "Coś poszło nie tak"
+        "email-error": "Email jest niepoprawny!",
+        "success-title": "Sukces!",
+        "error-title": "Błąd",
+        "success-msg": "Wiadomość została wysłana!",
+        "error-msg": "Coś poszło nie tak"
     },
-    "languages": {
+    "language": {
         "polish": "Polski",
         "english": "Angielski",
         "japanese": "日本語"

@@ -58,8 +58,11 @@ const Image = styled.div`
         }
     }
 
-    @media (max-width: 620px) {
-        display: none;
+    @media (max-width: 600px) {
+        width: 100%;
+        height: 40%;
+        bottom: 0;
+        top: auto;
     }
 `
 
@@ -92,6 +95,10 @@ const Title = styled.span`
 
     @media (max-height: 850px) {
         margin: 0;
+    }
+
+    @media (max-width: 430px) {
+        font-size: 20px;
     }
 `
 

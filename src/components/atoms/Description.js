@@ -17,6 +17,10 @@ const P = styled.p`
         width: 100%;
         text-align: left;
     }
+
+    @media (max-width: 540px) {
+        text-align: center;
+    }
 `
 
 const Description = ({children, className}) => {
