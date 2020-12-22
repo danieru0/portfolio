@@ -53,6 +53,10 @@ const Content = styled.div`
 		padding: 50px 50px;
 		overflow: auto;
 	}
+
+	@media (max-height: 650px) {
+		padding: 50px 50px;
+	}
 `
 
 function App() {

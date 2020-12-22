@@ -83,14 +83,19 @@ const StyledSwiper = styled(Swiper)`
 
     @media (max-width: 820px) {
         margin: 0;
+        width: 100%;
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
     }
 
     @media (max-height: 840px) {
         height: 600px;
     }
 
-    @media (max-width: 600px) {
-        width: 100%;
+    @media (max-height: 740px) {
+        height: 100%;
     }
 `
 
