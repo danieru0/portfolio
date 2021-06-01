@@ -1,12 +1,13 @@
 {
     "header": "Hej, Jestem\nDaniel Dąbrowski",
-    "description": "Początkujący Front End Developer. Moim głównym zainteresowaniem jest React natomiast zdarzyło mi się pisać w Node.js z bazą MongoDB. Dodatkowo miałem styczność z TypeScript'em, Redux'em, Firebase oraz GraphQL. Jednym z moich celów jest dojście do poziomu seniorskiego. Odchodząc od tematu programowania, w wolnym czasie uczę się języka japońskiego, dążę do płynnego posługiwania się tym językiem. W przyszłości chciałbym nauczyć się także koreańskiego oraz chińskiego.",
+    "description": "Początkujący Front End Developer. Głównie interesuje się Reactem natomiast zdarzyło mi się pisać w Node.js z bazą MongoDB. Dodatkowo miałem styczność z TypeScript'em, Redux'em, Firebase oraz GraphQL. Jednym z moich celów jest dojście do poziomu seniorskiego. W wolnym czasie uczę się języka japońskiego, dążę (a przynajmniej próbuje) do płynnego posługiwania się tym językiem. W przyszłości chciałbym nauczyć się także koreańskiego. (Którego uczyłem się już wcześniej)",
     "nav": {
         "skills": "Umiejętności",
         "projects": "Projekty",
         "contact": "Kontakt"
     },
     "projects": {
+        "vocupractice": "Strona pomagająca w uczeniu się słówek.",
         "video-editor": "Edytor filmów z możliwością eksportu.",
         "video-v2": "Wrzucanie filmów, autoryzacja, własna playlista, kanały, panel admina.",
         "korean-practice": "Pomoc w nauce języka koreańskiego, autoryzacja, własne konto, zapisywanie słówek, testy.",

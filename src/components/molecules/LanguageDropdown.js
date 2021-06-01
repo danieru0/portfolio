@@ -82,9 +82,6 @@ const LanguageDropDown = () => {
             <Item>
                 <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('en')}>{t('language.english')}</ButtonWithHover>
             </Item>
-            <Item>
-                <ButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleLangChange('jp')}>{t('language.japanese')}</ButtonWithHover>
-            </Item>
         </Container>
     );
 };
