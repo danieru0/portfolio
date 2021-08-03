@@ -1,13 +1,14 @@
 {
     "header": "Hello, I'm\nDaniel Dabrowski",
-    "description": "Beginner Front End developer. I'm mostly interested in React but i have some experience with Node.js and MongoDB as well. Additionaly, i've been using TypeScript, Redux, Firebase and GraphQL. One of my main goals is to reach the senior level and to further develop my programming skills. In free time, i'm learning Japanese. I strive (or at least i'm trying) to be fluent in this language. In the future, i have plans to learn Korean too. (Which i've been learning before)",
+    "description": "Beginner Front End developer. I'm mostly interested in React but i have some experience with Node.js and MongoDB as well. Additionaly, i have some expierience with Typescript, Redux, Firebase and GraphQL. One of my main goals is to reach the senior level and to further develop my programming skills. In free time, i'm learning Japanese. I strive (or at least i'm trying) to be fluent in this language. In the future, i have plans to learn Korean too. (Which i've been learning before)",
     "nav": {
         "skills": "Skills",
         "projects": "Projects",
         "contact": "Contact"
     },
     "projects": {
-        "vocupractice": "Web site to help with learning vocabulary",
+        "watch-together": "Web site on which you can watch videos together with your friends.",
+        "vocupractice": "Web site to help with learning vocabulary.",
         "video-editor": "Video editor with export function.",
         "video-v2": "Video upload, authorization, playlists, channels, admin panel.",
         "korean-practice": "Korean language help, authorization, account, words save, tests.",
@@ -30,7 +31,6 @@
     },
     "language": {
         "polish": "Polish",
-        "english": "English",
-        "japanese": "日本語"
+        "english": "English"
     }
 }

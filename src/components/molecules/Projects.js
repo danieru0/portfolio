@@ -18,6 +18,7 @@ import ChatV2Img from '../../img/chat-v2.png';
 import WindowsImg from '../../img/windowsapp.jpg';
 import GlobalImg from '../../img/global.png';
 import VocupracticeImg from '../../img/vocupractice.png';
+import WatchtogetherImg from '../../img/watchtogether.png';
 
 SwiperCore.use([Scrollbar, Mousewheel]);
 
@@ -121,10 +122,13 @@ const Projects = ({active, index, prevIndex}) => {
                 }}
             >
                 <SwiperSlide>
-                    <Project title="vocupractice" description={t('projects.vocupractice')} technologies={['react', 'redux', 'typescript']} img={VocupracticeImg} href="https://github.com/elosiktv/vocupractice"/>
+                    <Project title="watch-together" description={t('projects.watch-together')} technologies={['react', 'redux', 'typescript', 'node.js', 'socket.io']} img={WatchtogetherImg} href="https://github.com/elosiktv/watch-together"/>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Project title="video-editor" description={t('projects.video-editor')} technologies={['react', 'redux', 'typescript', 'node.js']} img={VideoPlayerImg} href="https://github.com/elosiktv/video-editor"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Project title="vocupractice" description={t('projects.vocupractice')} technologies={['react', 'redux', 'typescript']} img={VocupracticeImg} href="https://github.com/elosiktv/vocupractice"/>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Project title="video-v2" description={t('projects.video-v2')} technologies={['react', 'redux', 'node.js', 'graphql', 'mongodb']} img={VideoV2Img} href="https://github.com/elosiktv/video-v2"/>

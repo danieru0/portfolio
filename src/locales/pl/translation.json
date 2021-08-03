@@ -7,6 +7,7 @@
         "contact": "Kontakt"
     },
     "projects": {
+        "watch-together": "Strona umożliwiająca wspólne oglądanie filmów.",
         "vocupractice": "Strona pomagająca w uczeniu się słówek.",
         "video-editor": "Edytor filmów z możliwością eksportu.",
         "video-v2": "Wrzucanie filmów, autoryzacja, własna playlista, kanały, panel admina.",
@@ -30,7 +31,6 @@
     },
     "language": {
         "polish": "Polski",
-        "english": "Angielski",
-        "japanese": "日本語"
+        "english": "English"
     }
 }
