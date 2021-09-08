@@ -1,4 +1,4 @@
-![Portfolio image](https://i.vgy.me/PH21sT.png)
+![Portfolio image](https://i.ibb.co/XYyjKmJ/asd.png)
 
 # Portfolio
 
