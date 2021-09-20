@@ -67,7 +67,7 @@ const Socials = () => {
                     <LanguageButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} text={state.language} onClick={handleLanguageButtonClick}/>
                 </Item>
                 <Item>
-                    <SocialButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} text="Facebook" link="https://www.facebook.com/daniel.daniru0" iconName={['fab', 'facebook-square']} />
+                    <SocialButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} text="Facebook" link="https://www.facebook.com/daniru0/" iconName={['fab', 'facebook-square']} />
                 </Item>
                 <Item>
                     <SocialButtonWithHover onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} text="Github" link="https://github.com/elosiktv" iconName={['fab', 'github']} />
