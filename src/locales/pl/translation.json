@@ -1,6 +1,6 @@
 {
     "header": "Hej, Jestem\nDaniel Dąbrowski",
-    "description": "Początkujący Front End Developer. Głównie interesuje się Reactem natomiast zdarzyło mi się pisać w Node.js z bazą MongoDB. Dodatkowo miałem styczność z TypeScript'em, Redux'em, Firebase oraz GraphQL. Jednym z moich celów jest dojście do poziomu seniorskiego. W wolnym czasie uczę się języka japońskiego, dążę (a przynajmniej próbuje) do płynnego posługiwania się tym językiem. W przyszłości chciałbym nauczyć się także koreańskiego. (Którego uczyłem się już wcześniej)",
+    "description": "Początkujący Front End Developer. Największą wiedze mam w Reactcie ale nie boje się pisać w Node.js, Socket.io, GraphQL bądź korzystać z MongoDB. W projektach używam głównie TypeScripta, Reduxa oraz styled-components. Jednym z moich celów jest dojście do poziomu seniorskiego oraz nauki innych frameworków takich jak Vue.js oraz React Native. W wolnym czasie uczę się języka japońskiego, dążę (a przynajmniej próbuje) do płynnego posługiwania się tym językiem. W przyszłości chciałbym nauczyć się także koreańskiego.",
     "nav": {
         "skills": "Umiejętności",
         "projects": "Projekty",

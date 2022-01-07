@@ -1,6 +1,6 @@
 {
     "header": "Hello, I'm\nDaniel Dabrowski",
-    "description": "Beginner Front End developer. My biggest interest is in React but i happend to work with Node.js and MongoDB as well. Additionaly, i have some experience with Typescript, Redux, Firebase and GraphQL. One of my main goals is to reach the senior level and to further increase my knowledge. In free time, i'm learning Japanese. I strive (or at least i'm trying) to be fluent in this language. In the future, i have plans to learn Korean too. (Which i've been learning before)",
+    "description": "My biggest knowledge lies in React but i'm not scared to work with Node.js, Socket.io, GraphQL or MongoDB. In my projects i mostly use TypeScript, Redux and styled-components. One of my main goals is to reach senior level of programming and learn other frameworks such as Vue.js or React Native. In free time, i'm learning Japanese. I strive (or at least i'm trying) to be fluent in this language. In the future, i have plans to learn Korean too.",
     "nav": {
         "skills": "Skills",
         "projects": "Projects",
