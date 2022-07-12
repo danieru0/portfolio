@@ -12,4 +12,4 @@
 - i18next
 
 ## Live
-https://elosiktv.github.io/portfolio/
+https://danieru0.github.io/portfolio/
